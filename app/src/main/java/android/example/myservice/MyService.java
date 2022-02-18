@@ -21,7 +21,8 @@ public class MyService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         super.onStartCommand(intent, flags, startId);
         Log.i(TAG, "received request to----"+ intent.getExtras().getString("url"));
-        return START_STICKY;
+        return START_STICKY;  //starts or creates the service if the service is stopped or destroyed.
+        //START_STICKY more info:  https://stackoverflow.com/questions/9093271/start-sticky-and-start-not-sticky
     }
 
     @Override
